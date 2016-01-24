@@ -6,4 +6,4 @@ RUN yum -y install openssh-server shadow-utils && \
     service sshd stop && \
     echo "root:hackme" | chpasswd
 EXPOSE 22
-CMD ["/usr/sbin/ssh","-D"]
+CMD ["/usr/sbin/sshd","-D"]
