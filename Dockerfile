@@ -7,4 +7,4 @@ RUN echo "ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t dsa" >> /usr/local/sb
 RUN echo "/usr/sbin/sshd -D" >> /usr/local/sbin/ssh-startup.sh
 RUN echo "root:hackme" | chpasswd
 EXPOSE 22
-CMD ["/bin/bash /usr/sbin/ssh-startup.sh"]
+CMD ["/bin/bash","-c", "/usr/sbin/ssh-startup.sh"]
